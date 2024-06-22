@@ -1,11 +1,13 @@
-const kpuSurreyLibrary = [49.1332, -122.8890];
+const kpuSurreyLibrary = [49.13212731214532, -122.87106793621747];
 let map, userMarker;
 
 function initMap() {
     map = L.map('map').setView(kpuSurreyLibrary, 15);
 
+    
+
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        attribution: ''
     }).addTo(map);
 
     const libraryMarker = L.marker(kpuSurreyLibrary).addTo(map)
