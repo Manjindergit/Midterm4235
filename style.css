@@ -1,31 +1,84 @@
+/* Global settings */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgb(71, 57, 57);
-}
-h1 {
-    margin-top: 20px;
-}
-#map {
-    height: 500px;
-    width: 90%;
-    max-width: 800px;
-    margin: 20px 0;
-}
-#info {
-    width: 90%;
-    max-width: 800px;
-    text-align: center;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-#info p {
-    margin: 5px 0;
+    background-color: #f0f4f7;
 }
 
+/* Navbar settings */
+.navbar {
+    background-color: #155724;
+}
+
+/* Main heading settings */
+h1 {
+    margin-top: 20px;
+    font-weight: 700;
+    color: #155724; /* Dark green color */
+}
+
+/* Map container settings */
+#map {
+    height: 60vh;
+    width: 100%;
+    margin: 20px 0;
+}
+
+/* Info container settings */
+#info {
+    text-align: center;
+    padding: 15px;
+    background-color: #e9f7ef; /* Light green background */
+    border: 1px solid #c3e6cb; /* Border to match background */
+    border-radius: 4px;
+}
+
+/* Paragraph settings inside the info container */
+#info p {
+    margin: 10px 0;
+    font-weight: 500;
+    color: #155724; /* Dark green text */
+}
+
+/* Footer settings */
+footer {
+    background-color: #155724; /* Dark green background */
+    color: #fff; /* White text */
+    padding: 20px 0; /* Vertical padding */
+}
+
+footer a {
+    color: #fff; /* White text for links */
+    text-decoration: none; /* Remove underline from links */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Underline links on hover */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 576px) {
+    /* Map height adjustment for small screens */
+    #map {
+        height: 50vh;
+    }
+
+    /* Info box width adjustment for small screens */
+    #info {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+@media (min-width: 576px) {
+    /* Info box width adjustment for larger screens */
+    #info {
+        width: 80%;
+        margin: 20px auto;
+    }
+
+    /* Map height adjustment for larger screens */
+    #map {
+        height: 60vh;
+        width: 100%;
+        margin: 20px auto;
+    }
+}

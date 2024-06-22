@@ -1,57 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Location and Distance to KPU Surrey Library</title>
+    <!-- Leaflet CSS, Custom CSS, Bootstrap CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <style>
-        #map {
-            height: 60vh;
-            width: 100%;
-        }
-        #info {
-            margin-top: 20px;
-        }
-
-        body {
-            background-color: --bs-body-color
-        }
-       
-       
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- Navbar with brand and toggler for mobile view -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-success text-white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Map App</a>
+            <a class="navbar-brand text-white" href="#">Map App</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
-                    </li>
-                </ul>
-            </div>
         </div>
     </nav>
-
-    <div class="container">
-        <div class="row content">
-            <div class="col-md-12">
-                <h1 class="text-center">Location and Distance to KPU Surrey Library</h1>
+    <!-- Main Container-->
+    <div class="container flex-grow-1 mt-4">
+        <!-- Heading Container-->
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="text-success">Location and Distance to KPU Surrey Library</h1>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
+        <!-- Map Container -->
+        <div class="row mt-4">
+            <div class="col-12">
                 <div id="map" class="rounded border"></div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
+        <!-- Info Container -->
+        <div class="row mt-4">
+            <div class="col-12">
                 <div id="info" class="alert alert-info text-center">
                     <p>Your Location: <span id="your-location">Fetching...</span></p>
                     <p>Distance to KPU Surrey Library: <span id="distance">Calculating...</span> km</p>
@@ -60,8 +48,22 @@
         </div>
     </div>
 
+    <!-- Footer -->
+    <footer class="bg-success text-white text-center py-3 mt-4">
+        <div class="container">
+            <p>Manjinder Grewal</p>
+            <p>Email: <a href="mailto:manjinder.grewal4@student.kpu.ca" class="text-white">manjinder.grewal4@student.kpu.ca</a></p>
+            <p>GitHub: <a href="https://github.com/Manjindergit" class="text-white">https://github.com/Manjindergit</a></p>
+        </div>
+    </footer>
+
+    <!-- Leaflet JS, Custom JS, Bootstrap JS -->
+
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="app.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
