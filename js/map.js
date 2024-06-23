@@ -3,8 +3,8 @@ export function initMap(kpuSurreyLibrary, haversineDistance, handleLocationError
     let map = L.map("map").setView(kpuSurreyLibrary, 15);
     
     // Add OpenStreetMap tiles
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution: "",
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
     // Add a marker for KPU Surrey Library
@@ -22,20 +22,15 @@ export function initMap(kpuSurreyLibrary, haversineDistance, handleLocationError
                     position.coords.longitude,
                 ];
 
-                let userMarker = L.marker(userLocation, {
-                    icon: L.icon({
-                        iconUrl: "https://unpkg.com/leaflet@1.6.0/dist/images/marker-icon.png",
-                        iconSize: [25, 41],
-                        iconAnchor: [12, 41],
-                        popupAnchor: [1, -34],
-                        shadowSize: [41, 41],
-                    }),
-                }).addTo(map)
-                    .bindPopup("Your Location")
-                    .openPopup();
+                // Add a marker for the user's location
+                if (!userMarker) {
+                    userMarker = L.marker(userLocation, { icon: L.icon({ iconUrl: 'https://unpkg.com/leaflet@1.6.0/dist/images/marker-icon.png', iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34], shadowSize: [41, 41] }) }).addTo(map)
+                        .bindPopup('Your Location')
+                        .openPopup();
+                } else {
+                    userMarker.setLatLng(userLocation);//update the marker
+                }
 
-                // Center the map on the user's location
-                map.setView(userLocation, 15);
 
                 // Display the user's coordinates
                 document.getElementById("your-location").textContent = `${userLocation[0].toFixed(4)}, ${userLocation[1].toFixed(4)}`;
@@ -48,7 +43,7 @@ export function initMap(kpuSurreyLibrary, haversineDistance, handleLocationError
                 // Handle location errors
                 handleLocationError(true);
             },
-            { enableHighAccuracy: true, maximumAge: 0, timeout: 27000 }
+            { enableHighAccuracy: false, maximumAge: 0, timeout: 27000 }
         );
     } else {
         // Handle browser not supporting geolocation
