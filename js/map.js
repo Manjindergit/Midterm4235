@@ -1,6 +1,8 @@
 // Function to initialize the map
 export function initMap(kpuSurreyLibrary, haversineDistance, handleLocationError) {
     let map = L.map("map").setView(kpuSurreyLibrary, 15);
+
+    let userMarker;
     
     // Add OpenStreetMap tiles
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -43,7 +45,7 @@ export function initMap(kpuSurreyLibrary, haversineDistance, handleLocationError
                 // Handle location errors
                 handleLocationError(true);
             },
-            { enableHighAccuracy: false, maximumAge: 0, timeout: 27000 }
+            { enableHighAccuracy: true, maximumAge: 0, timeout: 27000 }
         );
     } else {
         // Handle browser not supporting geolocation
